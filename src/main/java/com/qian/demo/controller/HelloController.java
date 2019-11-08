@@ -55,7 +55,7 @@ public class HelloController {
     @ResponseBody
     public String sayHello() {
         String ret = "萨瓦迪卡";
-        System.out.println(ret);
+        logger.info(ret);
         return ret;
     }
 
@@ -99,7 +99,7 @@ public class HelloController {
         consumer.subscribe(topic,tag);
         logger.info("Consumer has started! groupName:{}, topic:{}", grpName, topic);
         String ret = "萨瓦迪卡";
-        System.out.println(ret);
+        logger.error(ret);
         return ret;
     }
 

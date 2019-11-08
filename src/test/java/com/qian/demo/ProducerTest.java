@@ -232,7 +232,7 @@ class ProducerTest {
 
     @Test
     public void broadcastSend() throws MQClientException, RemotingException, InterruptedException, MQBrokerException {
-        String grpName = "BROADCAST_GROUP_1442";
+        String grpName = "BROADCAST_GROUP_" + System.currentTimeMillis();
         DefaultMQProducer producer = new DefaultMQProducer(grpName);
         producer.setNamesrvAddr(namesrvAddr);
         producer.start();
@@ -262,6 +262,7 @@ class ProducerTest {
         consumer.start();
         System.out.printf("Broadcast Consumer Started.%n");
 
+        grpName = "TEST_GROUP" + System.currentTimeMillis();
         DefaultMQPushConsumer consumer2 = new DefaultMQPushConsumer(grpName);
         consumer2.setNamesrvAddr(namesrvAddr);
         consumer2.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);

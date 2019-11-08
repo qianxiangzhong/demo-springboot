@@ -1,0 +1,78 @@
+2019-11-07 17:22:52.115  INFO 9788 --- [Thread-25] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-07 17:22:52.123  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2019-11-07 17:22:52.123  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[30.157.153.90:10911] result: true
+2019-11-07 17:22:52.639  INFO 9788 --- [restartedMain] com.qian.demo.DemoApplication            : Starting DemoApplication on DESKTOP-R82K1C9 with PID 9788 (D:\Workspace\demo-springboot\target\classes started by qianxiangzhong in D:\Workspace\demo-springboot)
+2019-11-07 17:22:52.640  INFO 9788 --- [restartedMain] com.qian.demo.DemoApplication            : No active profile set, falling back to default profiles: default
+2019-11-07 17:22:53.090  WARN 9788 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-11-07 17:22:53.137  INFO 9788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-07 17:22:53.137  INFO 9788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-07 17:22:53.138  INFO 9788 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-07 17:22:53.171  INFO 9788 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-07 17:22:53.172  INFO 9788 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 525 ms
+2019-11-07 17:22:53.746  INFO 9788 --- [restartedMain] c.q.d.r.producer.RocketMqProducer        : Producer has started! groupName:myGroup20191106,nameserAddr:127.0.0.1:9876
+2019-11-07 17:22:53.914  INFO 9788 --- [restartedMain] c.q.d.r.consumer.RocketMqConsumer        : Consumer has started! groupName:myGroup20191106, topic:topic2019
+2019-11-07 17:22:54.019  INFO 9788 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-07 17:22:54.081  INFO 9788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-07 17:22:54.101  INFO 9788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-07 17:22:54.102  INFO 9788 --- [restartedMain] com.qian.demo.DemoApplication            : Started DemoApplication in 1.517 seconds (JVM running for 1312.457)
+2019-11-07 17:22:54.104  INFO 9788 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-11-07 17:29:09.896  INFO 9788 --- [Thread-32] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-07 17:29:09.905  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2019-11-07 17:29:09.914  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[30.157.153.90:10911] result: true
+2019-11-07 17:29:10.622  INFO 9788 --- [restartedMain] com.qian.demo.DemoApplication            : Starting DemoApplication on DESKTOP-R82K1C9 with PID 9788 (D:\Workspace\demo-springboot\target\classes started by qianxiangzhong in D:\Workspace\demo-springboot)
+2019-11-07 17:29:10.623  INFO 9788 --- [restartedMain] com.qian.demo.DemoApplication            : No active profile set, falling back to default profiles: default
+2019-11-07 17:29:11.038  WARN 9788 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-11-07 17:29:11.086  INFO 9788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-07 17:29:11.087  INFO 9788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-07 17:29:11.087  INFO 9788 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-07 17:29:11.103  INFO 9788 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-07 17:29:11.103  INFO 9788 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 473 ms
+2019-11-07 17:29:11.732  INFO 9788 --- [restartedMain] c.q.d.r.producer.RocketMqProducer        : Producer has started! groupName:myGroup20191106,nameserAddr:127.0.0.1:9876
+2019-11-07 17:29:11.989  INFO 9788 --- [restartedMain] c.q.d.r.consumer.RocketMqConsumer        : Consumer has started! groupName:myGroup20191106, topic:topic2019
+2019-11-07 17:29:12.054  INFO 9788 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-07 17:29:12.103  INFO 9788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-07 17:29:12.122  INFO 9788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-07 17:29:12.123  INFO 9788 --- [restartedMain] com.qian.demo.DemoApplication            : Started DemoApplication in 1.551 seconds (JVM running for 1690.479)
+2019-11-07 17:29:12.126  INFO 9788 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-11-07 17:31:22.413  INFO 9788 --- [Thread-38] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-07 17:31:22.421  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[30.157.153.90:10911] result: true
+2019-11-07 17:31:22.424  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2019-11-07 17:31:22.916  INFO 9788 --- [restartedMain] com.qian.demo.DemoApplication            : Starting DemoApplication on DESKTOP-R82K1C9 with PID 9788 (D:\Workspace\demo-springboot\target\classes started by qianxiangzhong in D:\Workspace\demo-springboot)
+2019-11-07 17:31:22.917  INFO 9788 --- [restartedMain] com.qian.demo.DemoApplication            : No active profile set, falling back to default profiles: default
+2019-11-07 17:31:23.421  WARN 9788 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-11-07 17:31:23.505  INFO 9788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-07 17:31:23.506  INFO 9788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-07 17:31:23.506  INFO 9788 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-07 17:31:23.525  INFO 9788 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-07 17:31:23.526  INFO 9788 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 604 ms
+2019-11-07 17:31:24.176  INFO 9788 --- [restartedMain] c.q.d.r.producer.RocketMqProducer        : Producer has started! groupName:myGroup20191106,nameserAddr:127.0.0.1:9876
+2019-11-07 17:31:24.349  INFO 9788 --- [restartedMain] c.q.d.r.consumer.RocketMqConsumer        : Consumer has started! groupName:myGroup20191106, topic:topic2019
+2019-11-07 17:31:24.446  INFO 9788 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-07 17:31:24.535  INFO 9788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-07 17:31:24.567  INFO 9788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-07 17:31:24.568  INFO 9788 --- [restartedMain] com.qian.demo.DemoApplication            : Started DemoApplication in 1.716 seconds (JVM running for 1822.924)
+2019-11-07 17:31:24.571  INFO 9788 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-11-07 18:37:49.791  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[30.157.153.90:10911] result: true
+2019-11-07 18:37:49.791  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[30.157.153.90:10911] result: true
+2019-11-07 18:37:53.749  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:37:54.763  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:37:55.768  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:37:56.188  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:37:56.774  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:37:59.793  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:00.800  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:01.804  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:02.812  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:03.559  INFO 9788 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-07 18:38:03.825  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:04.828  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:05.832  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:06.844  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:07.853  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:08.561  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2019-11-07 18:38:08.561  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2019-11-07 18:38:08.865  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:09.872  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:09.876  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:10.880  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
+2019-11-07 18:38:10.887  INFO 9788 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[] result: true
