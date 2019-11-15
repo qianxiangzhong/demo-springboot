@@ -237,7 +237,7 @@ class ProducerTest {
         producer.setNamesrvAddr(namesrvAddr);
         producer.start();
         for (int i = 0; i < 10; i++){
-            Message msg = new Message("Topic_broadcast",
+            Message msg = new Message("Topic_broadcast2",
                     "Tag" + i,
                     "OrderID188",
                     "Hello world".getBytes());
@@ -248,9 +248,10 @@ class ProducerTest {
 
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(grpName);
         consumer.setNamesrvAddr(namesrvAddr);
+        consumer.setInstanceName("instance1");
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         consumer.setMessageModel(MessageModel.BROADCASTING);
-        consumer.subscribe("Topic_broadcast", "Tag1 || Tag2 || Tag3");
+        consumer.subscribe("Topic_broadcast2", "Tag1 || Tag2 || Tag3");
         consumer.registerMessageListener(new MessageListenerConcurrently() {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
@@ -262,12 +263,13 @@ class ProducerTest {
         consumer.start();
         System.out.printf("Broadcast Consumer Started.%n");
 
-        grpName = "TEST_GROUP" + System.currentTimeMillis();
+//        grpName = "TEST_GROUP" + System.currentTimeMillis();
         DefaultMQPushConsumer consumer2 = new DefaultMQPushConsumer(grpName);
         consumer2.setNamesrvAddr(namesrvAddr);
+        consumer2.setInstanceName("instance2");
         consumer2.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         consumer2.setMessageModel(MessageModel.BROADCASTING);
-        consumer2.subscribe("Topic_broadcast", "Tag1 || Tag2 || Tag3");
+        consumer2.subscribe("Topic_broadcast2", "Tag1 || Tag2 || Tag3");
         consumer2.registerMessageListener(new MessageListenerConcurrently() {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
