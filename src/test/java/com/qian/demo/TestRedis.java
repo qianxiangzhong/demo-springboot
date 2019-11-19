@@ -88,7 +88,6 @@ public class TestRedis {
         redisTemplate.opsForValue().set("human1", human1);
         Human human2 = (Human) redisTemplate.opsForValue().get("human1");
         logger.info("human2:{}", human2);
-        logger.info("human2:{}", human2);
     }
 
     public JedisPoolConfig getJedisPoolConfig() {
