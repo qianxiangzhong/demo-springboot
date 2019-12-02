@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qian.demo.mapper.UserMapper">
+    <resultMap id="UserResultMap" type="com.qian.demo.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="user_no" jdbcType="VARCHAR" property="userNo" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    </resultMap>
+
+    <select id="getUserById" resultMap="UserResultMap">
+        select * from tb_user where id = #{id}
+    </select>
+    <select id="getUsersByNameLike" resultMap="UserResultMap">
+        select * from tb_user
+        <where>
+            <if test="userName != null and userName != ''">
+                and user_name like "%"#{userName}"%"
+            </if>
+        </where>
+    </select>
+    <insert id="saveUser" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into tb_user values (null, #{userNo}, #{userName})
+    </insert>
+</mapper>

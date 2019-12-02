@@ -6,6 +6,7 @@ import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.exception.RemotingException;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +16,7 @@ import org.springframework.context.ApplicationContext;
 /**
  * @author qxz
  */
+@MapperScan("com.qian.demo.mapper")
 @SpringBootApplication
 public class DemoApplication {
 
@@ -22,7 +24,7 @@ public class DemoApplication {
     public static void main(String[] args) {
         // MQ发消息
         ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
-        DefaultMQProducer producer = context.getBean(DefaultMQProducer.class);
+//        DefaultMQProducer producer = context.getBean(DefaultMQProducer.class);
 //        try {
 //            String mqBody = "mqBody";
 //            String topic = "alibaba";
