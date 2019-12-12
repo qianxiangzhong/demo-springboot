@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qian.demo.mapper.UserMapper">
-    <resultMap id="UserResultMap" type="com.qian.demo.entity.User">
+    <resultMap id="UserResultMap" type="com.qian.demo.entity.LearningRecord">
         <result column="id" jdbcType="INTEGER" property="id" />
         <result column="user_no" jdbcType="VARCHAR" property="userNo" />
         <result column="user_name" jdbcType="VARCHAR" property="userName" />

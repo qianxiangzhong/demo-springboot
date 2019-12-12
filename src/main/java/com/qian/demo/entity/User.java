@@ -1,8 +1,8 @@
 package com.qian.demo.entity;
 
-import org.springframework.context.annotation.Bean;
-
-
+/**
+ * @author qianxiangzhong
+ */
 public class User {
     private Integer id;
     private String userNo;

@@ -1,0 +1,51 @@
+#端口
+#server:
+#  port: 8280
+server:
+  port: 8280 # 服务提供方
+
+# 指定当前eureka客户端的注册地址,
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8180/eureka/
+  instance:
+    hostname: localhost
+
+spring:
+  #当前服务名称
+  application:
+    name: learning-service
+  #thymeleaf（Thymeleaf is a modern server-side Java template engine for both web and standalone environments.）Java模板引擎的配置
+  thymeleaf:
+    prefix: classpath:/static/
+  #MVC配置视图映射
+#  mvc:
+#    static-path-pattern: /**
+#  resources:
+#    static-locations: classpath:/static
+#spring:
+  #  profiles:
+  #    active: learning
+  #数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_qian?useSSL=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.qian.demo.entity
+#  type-aliases-package: com.qian.demo.entity  :=com.example.entity
+
+#日志
+logging:
+  file:
+    path: logs/
+    name: my.log
+  level:
+    root: info
+    #mapper下的类中日志打印（mybati默认日志级别为debug）
+    com.qian.demo.mapper: debug

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qian.demo.mapper.LearningRecordMapper">
+    <resultMap id="LearningRecordMap" type="com.qian.demo.entity.LearningRecord">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="person_id" jdbcType="VARCHAR" property="personId" />
+        <result column="person_name" jdbcType="VARCHAR" property="personName" />
+        <result column="school_id" jdbcType="VARCHAR" property="schoolId" />
+        <result column="school_name" jdbcType="VARCHAR" property="schoolName" />
+        <result column="begin_date" jdbcType="VARCHAR" property="beginDate" />
+        <result column="end_date" jdbcType="VARCHAR" property="endDate" />
+        <result column="insert_time" jdbcType="VARCHAR" property="insertTime" />
+        <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+    </resultMap>
+
+    <select id="getLearningRecordById" resultMap="LearningRecordMap">
+        select r.*,p.name person_name,s.name school_name
+        from tb_learning_record r
+        left join tb_person p on r.person_id = p.id
+        left join tb_school s on r.school_id = s.id
+        where r.id = #{id}
+    </select>
+
+    <select id="getLearningRecordBySchoolAndPerson" resultMap="LearningRecordMap">
+        select r.*,p.name person_name,s.name school_name
+        from tb_learning_record r,tb_school s,tb_person p
+        <where>
+            and r.school_id = s.id
+            and r.person_id = p.id
+            <if test="personName != null and personName != ''">
+                and p.name = #{personName}
+            </if>
+            <if test="schoolName != null and schoolName != ''">
+                and s.name = #{schoolName}
+            </if>
+        </where>
+    </select>
+    <!--mysql的自增或有默认值的字段不允许显示插入null，而应该直接不插入该字段-->
+    <insert id="saveLearningRecord" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into tb_learning_record (person_id, school_id, begin_date, end_date) values (#{personId}, #{schoolId}, #{beginDate}, #{endDate})
+    </insert>
+</mapper>

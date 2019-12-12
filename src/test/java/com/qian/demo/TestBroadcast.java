@@ -1,7 +1,6 @@
 package com.qian.demo;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
-import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQBrokerException;
@@ -13,9 +12,6 @@ import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 import org.apache.rocketmq.remoting.exception.RemotingException;
-import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 public class TestBroadcast {
     public static void main(String[] args) throws MQClientException, RemotingException, InterruptedException, MQBrokerException {
@@ -45,15 +41,11 @@ class MyConsumer1 {
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         consumer.setMessageModel(MessageModel.BROADCASTING);
         consumer.subscribe("TOPIC_BROADCAST" + n, "TAG_BROADCAST" + n);
-        consumer.registerMessageListener(new MessageListenerConcurrently() {
-            @Override
-            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
-                                                            ConsumeConcurrentlyContext context) {
-                for (MessageExt msg : msgs) {
-                    System.out.println(" Receive New Messages: " + new String(msg.getBody()));
-                }
-                return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+        consumer.registerMessageListener((MessageListenerConcurrently) (msgs, context) -> {
+            for (MessageExt msg : msgs) {
+                System.out.println(" Receive New Messages: " + new String(msg.getBody()));
             }
+            return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
         });
         consumer.start();
     }
@@ -68,15 +60,11 @@ class MyConsumer2 {
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         consumer.setMessageModel(MessageModel.BROADCASTING);
         consumer.subscribe("TOPIC_BROADCAST" + n, "TAG_BROADCAST" + n);
-        consumer.registerMessageListener(new MessageListenerConcurrently() {
-            @Override
-            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
-                                                            ConsumeConcurrentlyContext context) {
-                for (MessageExt msg : msgs) {
-                    System.out.println(" Receive New Messages: " + new String(msg.getBody()));
-                }
-                return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+        consumer.registerMessageListener((MessageListenerConcurrently) (msgs, context) -> {
+            for (MessageExt msg : msgs) {
+                System.out.println(" Receive New Messages: " + new String(msg.getBody()));
             }
+            return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
         });
         consumer.start();
     }

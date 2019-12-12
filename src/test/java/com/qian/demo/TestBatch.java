@@ -1,7 +1,6 @@
 package com.qian.demo;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
-import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQBrokerException;
@@ -50,15 +49,11 @@ class BatchConsumer {
         consumer.setNamesrvAddr("127.0.0.1:9876");
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         consumer.subscribe("TOPIC_BROADCAST" + n, "TAG_BROADCAST" + n);
-        consumer.registerMessageListener(new MessageListenerConcurrently() {
-            @Override
-            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
-                                                            ConsumeConcurrentlyContext context) {
-                for (MessageExt msg : msgs) {
-                    logger.info("now:{}, Receive New Messages:{}", new Date(), new String(msg.getBody()));
-                }
-                return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+        consumer.registerMessageListener((MessageListenerConcurrently) (msgs, context) -> {
+            for (MessageExt msg : msgs) {
+                logger.info("now:{}, Receive New Messages:{}", new Date(), new String(msg.getBody()));
             }
+            return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
         });
         consumer.start();
     }
