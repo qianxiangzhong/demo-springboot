@@ -6,28 +6,27 @@
         <groupId>com.qian</groupId>
         <artifactId>myspringcloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <!--<relativePath/>--> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.qian</groupId>
-    <artifactId>learning</artifactId>
+    <artifactId>server-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>learning</name>
-    <description>Learning module</description>
+    <name>server-consumer</name>
+    <description>Server Consumer for Spring Cloud</description>
 
     <properties>
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
-        <!--eureka-client 既能注册服务又能订阅服务-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--模板引擎-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+
     </dependencies>
 
     <build>

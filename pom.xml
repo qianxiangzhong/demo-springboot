@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.qian</groupId>
-    <artifactId>myspringboot</artifactId>
+    <artifactId>myspringcloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <!--<packaging>pom</packaging>-->
-    <name>demo-springboot</name>
-    <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
+    <name>myspringcloud</name>
+    <description>My Spring Cloud project</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -15,7 +15,8 @@
         <version>2.2.0.RELEASE</version>
     </parent>
     <modules>
-        <module>eureka</module>
+        <module>eureka-server</module>
+        <module>server-consumer</module>
         <module>learning</module>
     </modules>
 
