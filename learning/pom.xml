@@ -6,7 +6,6 @@
         <groupId>com.qian</groupId>
         <artifactId>myspringcloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <!--<relativePath/>--> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.qian</groupId>
     <artifactId>learning</artifactId>
