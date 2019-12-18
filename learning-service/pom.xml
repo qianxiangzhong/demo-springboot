@@ -8,10 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.qian</groupId>
-    <artifactId>learning</artifactId>
+    <artifactId>learning-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>learning</name>
-    <description>Learning module</description>
+    <name>learning-service</name>
+    <description>learning-service</description>
 
     <properties>
     </properties>
