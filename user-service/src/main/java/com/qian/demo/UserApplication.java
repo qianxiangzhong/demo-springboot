@@ -12,12 +12,12 @@ import org.springframework.context.ApplicationContext;
  */
 @MapperScan("com.qian.demo.mapper")
 @SpringBootApplication
-public class DemoApplication {
+public class UserApplication {
 
-    public static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
+    public static final Logger logger = LoggerFactory.getLogger(UserApplication.class);
     public static void main(String[] args) {
         // MQ发消息
-        ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
+        ApplicationContext context = SpringApplication.run(UserApplication.class, args);
 //        DefaultMQProducer producer = context.getBean(DefaultMQProducer.class);
 //        try {
 //            String mqBody = "mqBody";

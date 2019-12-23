@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>录入学习履历</title>
+    <script src="/js/jquery-3.4.1.min.js">
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            initPerson(null);
+            initSchool(null);
+        });
+        // 初始化人员选项
+        function initPerson(name) {
+            $.ajax({
+                url: '/person/getPersonsByNameLike',
+                async: false,
+                data: {name: name},
+                success: function (result) {
+                    $.each(result, function (index, value) {
+                        $('#personId').append($('<option value="' + value.id + '" label="' + value.name + '"></option>'));
+                    });
+                }
+            });
+        }
+        // 初始化学校选项
+        function initSchool(name) {
+            $.ajax({
+                url: '/school/getSchoolByNameLike',
+                async: false,
+                data: {name: name},
+                success: function (result) {
+                    $.each(result, function (index, value) {
+                        $('#schoolId').append($('<option value="' + value.id + '" label="' + value.name + '"></option>'));
+                    });
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<form action="/learning/saveLearningRecord" method="post">
+    人员: <select name="personId" id="personId" width="100">
+</select><br/>
+    学校: <select name="schoolId" id="schoolId" width="100">
+</select><br/>
+    开始日期：<input type="date" name="beginDate" required="required"/><br/>
+    结束日期：<input type="date" name="endDate"/><br/>
+    <input type="submit" value="保存"/>
+</form>
+</body>
+</html>

@@ -3,15 +3,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qian.demo.mapper.LearningRecordMapper">
     <resultMap id="LearningRecordMap" type="com.qian.demo.entity.LearningRecord">
-        <result column="id" jdbcType="INTEGER" property="id" />
-        <result column="person_id" jdbcType="VARCHAR" property="personId" />
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="person_id" jdbcType="BIGINT" property="personId" />
         <result column="person_name" jdbcType="VARCHAR" property="personName" />
-        <result column="school_id" jdbcType="VARCHAR" property="schoolId" />
+        <result column="school_id" jdbcType="BIGINT" property="schoolId" />
         <result column="school_name" jdbcType="VARCHAR" property="schoolName" />
-        <result column="begin_date" jdbcType="VARCHAR" property="beginDate" />
-        <result column="end_date" jdbcType="VARCHAR" property="endDate" />
-        <result column="insert_time" jdbcType="VARCHAR" property="insertTime" />
-        <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+        <result column="begin_date" jdbcType="DATE" property="beginDate" />
+        <result column="end_date" jdbcType="DATE" property="endDate" />
+        <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     </resultMap>
 
     <select id="getLearningRecordById" resultMap="LearningRecordMap">

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>录入学校信息</title>
+    </head>
+    <body>
+        <form action="/school/saveSchool" method="post">
+            学校名称: <input type="text" name="name" required="required" pattern="\S{1,50}" placeholder="不超过50位"/><br/>
+            建校日期：<input type="date" name="buildDate" required="required" /><br/>
+            <input type="submit" value="保存"/>
+        </form>
+    </body>
+</html>

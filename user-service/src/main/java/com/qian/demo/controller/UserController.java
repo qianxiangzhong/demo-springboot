@@ -17,6 +17,7 @@ import java.util.List;
 /**
  * @author qxz
  */
+@RequestMapping("/user")
 @Controller
 public class UserController {
 
@@ -24,12 +25,18 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @RequestMapping("/getUserById")
+    @ResponseBody
+    public User getUserById (Integer id) {
+        return userService.getUserById(id);
+    }
+
     @RequestMapping("/getUsersByNameLike")
     @ResponseBody
     public List<User> queryUsersByNameLike(String userName) throws MQClientException, RemotingException, InterruptedException, MQBrokerException {
-        logger.info("queryUserLike()");
+        logger.info("queryUsersByNameLike()");
         List<User> users = userService.getUserByNameLike(userName);
-        logger.info("queryUserLike(), users:{}", users);
+        logger.info("queryUsersByNameLike(), users:{}", users);
         return users;
     }
 

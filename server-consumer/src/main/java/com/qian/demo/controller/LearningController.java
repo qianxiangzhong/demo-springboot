@@ -22,7 +22,6 @@ public class LearningController {
 
     @RequestMapping("/getDefaultRecordFromOther")
     public LearningRecord getLearningRecord (String personId, String schoolId) {
-//        LearningRecord learningRecord = restTemplate.getForObject("http://learning-service/learning/getDefaultRecord", LearningRecord.class);
         LearningRecord learningRecord = restTemplate.getForObject("http://learning-service/learning/getDefaultRecord", LearningRecord.class);
         return learningRecord;
     }

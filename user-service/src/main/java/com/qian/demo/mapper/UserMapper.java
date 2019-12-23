@@ -9,6 +9,14 @@ import java.util.List;
  */
 @Repository
 public interface UserMapper {
+
+    /**
+     * 根据主键查询
+     * @param id
+     * @return
+     */
+    User getUserById(Integer id);
+
     /**
      * 根据用户名模糊查询用户
      * @param userName

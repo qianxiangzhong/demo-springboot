@@ -55,7 +55,7 @@ public class LearningController {
 
     @RequestMapping("/index")
     public String index() {
-        return "pages/saveLearningRecord";
+        return "pages/editLearningRecord";
     }
 
     @RequestMapping("/getDefaultRecord")

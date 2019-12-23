@@ -1,6 +1,7 @@
 package com.qian.demo.entity;
 
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
@@ -11,13 +12,13 @@ import java.time.LocalDateTime;
  */
 public class LearningRecord {
     private Integer id;
-    @NotEmpty(message = "personId为空")
-    private String personId;
+    @Min(value = 1,message = "personId为空或小于1")
+    private Integer personId;
     private String personName;
-    @NotEmpty(message = "schoolId为空")
-    private String schoolId;
+    @Min(value= 1,message = "schoolId为空；")
+    private Integer schoolId;
     private String schoolName;
-    @NotNull(message = "beginDate为空")
+    @NotNull(message = "beginDate为空；")
     private LocalDate beginDate;
     private LocalDate endDate;
     private LocalDateTime insertTime;
@@ -31,11 +32,11 @@ public class LearningRecord {
         this.id = id;
     }
 
-    public String getPersonId() {
+    public Integer getPersonId() {
         return personId;
     }
 
-    public void setPersonId(String personId) {
+    public void setPersonId(Integer personId) {
         this.personId = personId;
     }
 
@@ -47,11 +48,11 @@ public class LearningRecord {
         this.personName = personName;
     }
 
-    public String getSchoolId() {
+    public Integer getSchoolId() {
         return schoolId;
     }
 
-    public void setSchoolId(String schoolId) {
+    public void setSchoolId(Integer schoolId) {
         this.schoolId = schoolId;
     }
 

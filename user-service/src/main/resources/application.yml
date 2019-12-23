@@ -1,0 +1,37 @@
+logging:
+  file:
+    name: my.log
+    path: logs/
+  level:
+    com:
+      qian:
+        demo:
+          mapper: debug
+    root: info
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: =com.example.entity
+rocketmq:
+  consumer:
+    consumeThreadMax: 64
+    consumeThreadMin: 20
+    groupName: myGroup20191106
+    namesrvAddr: 127.0.0.1:9876
+    tag: test
+    topic: topic2019
+  producer:
+    groupName: myGroup20191106
+    instanceName: vehicleProducer
+    maxMessageSize: 131072
+    namesrvAddr: 127.0.0.1:9876
+    sendMsgTimeout: 10000
+    tag: test
+    topic: topic2019
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/db_qian?useSSL=true&serverTimezone=UTC
+    username: root

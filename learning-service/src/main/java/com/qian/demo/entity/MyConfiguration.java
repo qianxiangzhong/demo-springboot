@@ -1,6 +1,8 @@
 package com.qian.demo.entity;
 
 import com.qian.demo.interceptor.ApiInterceptor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -17,10 +19,12 @@ public class MyConfiguration implements WebMvcConfigurer
     // 所以这里使用 WebMvcConfigurer
 //        extends WebMvcConfigurationSupport
 {
+    public static final Logger logger = LoggerFactory.getLogger(MyConfiguration.class);
+
     @Value("${spring.datasource.username}")
-    private String personId;
+    private String username;
     @Value("${spring.datasource.url}")
-    private String schoolId;
+    private String url;
 
     /**
      * 方法使用@Bean注解，内部返回Bean对象可作为全局唯一Bean对象，其他地方可直接使用@Autowired来注入
@@ -28,9 +32,10 @@ public class MyConfiguration implements WebMvcConfigurer
      */
     @Bean
     public LearningRecord getLearningRecord() {
+        logger.info("username:{}, url:{}", username, url);
         LearningRecord learningRecord = new LearningRecord();
-        learningRecord.setPersonId(personId);
-        learningRecord.setSchoolId(schoolId);
+        learningRecord.setPersonId(1);
+        learningRecord.setSchoolId(2);
         return learningRecord;
     }
 

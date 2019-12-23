@@ -15,6 +15,10 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
+    public User getUserById(Integer id) {
+        return userMapper.getUserById(id);
+    }
+
     public List<User> getUserByNameLike(String userName) {
         return userMapper.getUsersByNameLike(userName);
     }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qian.demo.mapper.SchoolMapper">
+    <resultMap id="schoolMap" type="com.qian.demo.entity.School">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="build_date" jdbcType="DATE" property="buildDate" />
+        <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <select id="getSchoolById" resultMap="schoolMap">
+        select s.*
+        from tb_school s
+        <where>
+            <if test="id != null and id != ''">
+                and s.id = #{id}
+            </if>
+        </where>
+    </select>
+
+    <select id="getSchoolByNameLike" resultMap="schoolMap">
+        select s.*
+        from tb_school s
+        <where>
+            <if test="name != null and name != ''">
+                and s.name like "%"#{name}"%"
+            </if>
+        </where>
+    </select>
+
+
+    <!--mysql的自增或有默认值的字段不允许显示插入null，而应该直接不插入该字段-->
+    <insert id="saveSchool" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into tb_school (name, build_date) values (#{name}, #{buildDate})
+    </insert>
+</mapper>

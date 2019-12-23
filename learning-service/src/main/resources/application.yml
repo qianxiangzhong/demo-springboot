@@ -4,7 +4,7 @@
 server:
   port: 8280 # 服务提供方
 
-# 指定当前eureka客户端的注册地址,
+# 指定当前eureka客户端的注册服务地址,
 eureka:
   client:
     service-url:
@@ -19,14 +19,6 @@ spring:
   #thymeleaf（Thymeleaf is a modern server-side Java template engine for both web and standalone environments.）Java模板引擎的配置
   thymeleaf:
     prefix: classpath:/static/
-  #MVC配置视图映射
-#  mvc:
-#    static-path-pattern: /**
-#  resources:
-#    static-locations: classpath:/static
-#spring:
-  #  profiles:
-  #    active: learning
   #数据源
   datasource:
     url: jdbc:mysql://localhost:3306/db_qian?useSSL=true&serverTimezone=Asia/Shanghai

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>录入人员信息</title>
+    </head>
+    <body>
+        <form action="/person/savePerson" method="post">
+            身份证号: <input type="text" name="idNo" required="required" pattern="[0-9]{17}[A-Z0-9]{1}" placeholder="18位"/><br/>
+            人员姓名: <input type="text" name="name" required="required" pattern="\S{1,5}" placeholder="不超过5位"/><br/>
+            <input type="submit" value="保存"/>
+        </form>
+    </body>
+</html>

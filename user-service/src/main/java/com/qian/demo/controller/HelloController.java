@@ -29,6 +29,7 @@ import java.util.List;
 /**
  * @author qxz
  */
+@RequestMapping("/hello")
 @Controller
 public class HelloController {
 
